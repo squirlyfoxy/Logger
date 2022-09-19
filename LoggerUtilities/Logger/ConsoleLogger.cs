@@ -19,6 +19,7 @@ namespace LoggerUtilities.Logger
             TypesToLog.Add(Message.MessageType.MessageType_Info);
             TypesToLog.Add(Message.MessageType.MessageType_Warning);
             TypesToLog.Add(Message.MessageType.MessageType_Error);
+            TypesToLog.Add(Message.MessageType.MessageType_Fatal);
             TypesToLog.Add(Message.MessageType.MessageType_Positive);
         }
 
@@ -31,6 +32,7 @@ namespace LoggerUtilities.Logger
             {
                 case Message.MessageType.MessageType_Warning: Console.ForegroundColor = ConsoleColor.DarkYellow; break;
                 case Message.MessageType.MessageType_Error: Console.ForegroundColor = ConsoleColor.Red; break;
+                case Message.MessageType.MessageType_Fatal: Console.ForegroundColor = ConsoleColor.DarkRed; break;
                 case Message.MessageType.MessageType_Positive: Console.ForegroundColor = ConsoleColor.Green; break;
                 default: Console.ForegroundColor = ConsoleColor.White; break;
             }

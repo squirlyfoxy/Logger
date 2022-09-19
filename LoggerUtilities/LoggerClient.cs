@@ -6,6 +6,7 @@ using System.Threading;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using LoggerUtilities.Logger;
 
 namespace LoggerUtilities
@@ -55,6 +56,20 @@ namespace LoggerUtilities
         {
             Send(new Message.Message(
                 msg, Message.MessageType.MessageType_Error, DateTime.Now
+                ));
+        }
+
+        public void SendFatal()
+        {
+            StackTrace trace = new StackTrace(true);
+            Send(new Message.Message(trace.GetFrame(trace.GetFrames().Length - 1).ToString(), Message.MessageType.MessageType_Fatal, DateTime.Now
+                ));
+        }
+
+        public void SendFatal(string msg)
+        {
+            StackTrace trace = new StackTrace(true);
+            Send(new Message.Message(trace.GetFrame(trace.GetFrames().Length - 1).ToString() + "\nMESSAGE: " + msg, Message.MessageType.MessageType_Fatal, DateTime.Now
                 ));
         }
 

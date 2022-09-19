@@ -17,6 +17,7 @@ namespace LoggerUtilities.Logger
 
             TypesToLog = new List<Message.MessageType>();
             TypesToLog.Add(Message.MessageType.MessageType_Error);
+            TypesToLog.Add(Message.MessageType.MessageType_Fatal);
         }
 
         public void Use()

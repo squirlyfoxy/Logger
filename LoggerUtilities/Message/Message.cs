@@ -12,7 +12,8 @@ namespace LoggerUtilities.Message
         MessageType_Warning = 1,
         MessageType_Error = 2,
         MessageType_Positive = 3,
-        MessageType_Unset = 4,
+        MessageType_Fatal = 4,
+        MessageType_Unset = 5,
     }
 
     public class Message : IMessage
@@ -82,6 +83,7 @@ namespace LoggerUtilities.Message
             {
                 case MessageType.MessageType_Info: type = "INFO"; break;
                 case MessageType.MessageType_Error: type = "ERROR"; break;
+                case MessageType.MessageType_Fatal: type = "FATAL"; break;
                 case MessageType.MessageType_Warning: type = "WARNING"; break;
                 case MessageType.MessageType_Positive: type = "OK"; break;
             }
@@ -96,7 +98,7 @@ namespace LoggerUtilities.Message
         /// </summary>
         public static string[] GetMessagesTypesAsStrings()
         {
-            return new string[] { "Info", "Warning", "Errors", "Positive", "All" };
+            return new string[] { "Info", "Warning", "Error", "Fatal", "Positive", "All" };
         }
 
         #endregion

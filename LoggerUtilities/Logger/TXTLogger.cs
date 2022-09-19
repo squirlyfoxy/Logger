@@ -15,6 +15,8 @@ namespace LoggerUtilities.Logger
         public TXTLogger()
         {
             TypesToLog = new List<Message.MessageType>();
+
+            // Log everything
             TypesToLog.Add(Message.MessageType.MessageType_Info);
             TypesToLog.Add(Message.MessageType.MessageType_Warning);
             TypesToLog.Add(Message.MessageType.MessageType_Error);

@@ -17,6 +17,7 @@ namespace TestLogger
                 client.SendError("Error");
                 client.SendInfo("Info");
                 client.SendPositive("Positive");
+                client.SendFatal("Fatal");
             }
             catch (Exception ex)
             {
